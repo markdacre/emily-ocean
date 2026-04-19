@@ -1,0 +1,386 @@
+/* Emily Thibodeau Fitness — Ocean Edition design tokens
+ * Fjalla One (display) + Cantarell (body). Google Fonts.
+ */
+
+:root {
+  /* ---------- OCEAN PALETTE ---------- */
+
+  /* Deep — abyssal navy, grounds dark surfaces (footer, testimonial bg) */
+  --deep-900: #071827;
+  --deep-800: #0b2237;
+  --deep-700: #103052;
+  --deep-600: #154373;
+
+  /* Tide — brand primary. Confident mid-ocean blue. */
+  --tide-50: #e8f2f9;
+  --tide-100: #c9e1f0;
+  --tide-200: #8fc2df;
+  --tide-300: #4f9ecb;
+  --tide-400: #2a7fb5;
+  --tide-500: #156699; /* PRIMARY */
+  --tide-600: #0e5481;
+  --tide-700: #0b4269;
+
+  /* Seafoam — tertiary bright accent, sunlit shallows */
+  --foam-50: #eef9f7;
+  --foam-100: #d4f0ea;
+  --foam-200: #a7e0d5;
+  --foam-300: #6bcbba;
+  --foam-400: #3fb39f;
+  --foam-500: #239683;
+  --foam-600: #17786a;
+
+  /* Sky — pale wash for page bg; sky-meets-water */
+  --sky-50: #f4fafc; /* default page bg */
+  --sky-100: #e8f3f8;
+  --sky-200: #d5e9f1;
+
+  /* Sand — warm neutral, a beach against the blue */
+  --sand-50: #fbf7ef;
+  --sand-100: #f4ecd9;
+  --sand-200: #e9dcbc;
+  --sand-300: #d9c68f;
+
+  /* Coral — preserved warm accent from sister brand; used sparingly here */
+  --coral-300: #f8a894;
+  --coral-500: #ef6f5a;
+
+  /* Ink — warm blue-black text */
+  --ink-50: #eef3f7;
+  --ink-100: #d9e2ea;
+  --ink-200: #b6c3cf;
+  --ink-300: #8494a4;
+  --ink-400: #5b6a78;
+  --ink-500: #3e4b57;
+  --ink-700: #24303c;
+  --ink-900: #0f1a24; /* body text */
+
+  /* Semantic */
+  --fg-default: var(--ink-900);
+  --fg-muted: var(--ink-500);
+  --fg-subtle: var(--ink-400);
+  --fg-onDark: var(--sky-50);
+  --fg-link: var(--tide-600);
+  --fg-accent: var(--tide-500);
+
+  --bg-page: var(--sky-50);
+  --bg-raised: #ffffff;
+  --bg-sunken: var(--sky-100);
+  --bg-dark: var(--deep-800);
+
+  --border-default: var(--ink-100);
+  --border-strong: var(--ink-200);
+  --border-accent: var(--tide-500);
+
+  /* Gradients — used sparingly */
+  --gradient-tide: linear-gradient(
+    180deg,
+    #f4fafc 0%,
+    #dceef5 55%,
+    #bfdfee 100%
+  );
+  --gradient-deep: linear-gradient(180deg, #103052 0%, #071827 100%);
+  --gradient-surf: linear-gradient(135deg, #156699 0%, #239683 100%);
+
+  /* ---------- TYPE ---------- */
+  --font-display:
+    "Fjalla One", "Oswald", "Impact", "Arial Narrow Bold", sans-serif;
+  --font-body: "Cantarell", -apple-system, "Segoe UI", system-ui, sans-serif;
+
+  --fs-eyebrow: 13px;
+  --fs-caption: 14px;
+  --fs-small: 15px;
+  --fs-body: 17px;
+  --fs-body-lg: 19px;
+  --fs-h4: 22px;
+  --fs-h3: clamp(28px, 2.4vw, 36px);
+  --fs-h2: clamp(40px, 4.4vw, 64px);
+  --fs-h1: clamp(56px, 7.2vw, 104px);
+
+  --lh-tight: 1;
+  --lh-snug: 1.12;
+  --lh-normal: 1.45;
+  --lh-relaxed: 1.6;
+
+  --tr-tight: 0.005em;
+  --tr-snug: 0.01em;
+  --tr-normal: 0;
+  --tr-eyebrow: 0.22em;
+
+  /* ---------- SPACING (4px base) ---------- */
+  --s-1: 4px;
+  --s-2: 8px;
+  --s-3: 12px;
+  --s-4: 16px;
+  --s-5: 20px;
+  --s-6: 24px;
+  --s-8: 32px;
+  --s-10: 40px;
+  --s-12: 48px;
+  --s-16: 64px;
+  --s-20: 80px;
+  --s-24: 96px;
+  --s-32: 128px;
+
+  --gutter-desktop: 48px;
+  --gutter-tablet: 32px;
+  --gutter-mobile: 20px;
+  --content-max: 1240px;
+  --reading-max: 640px;
+
+  /* ---------- RADII ---------- */
+  --r-xs: 4px;
+  --r-sm: 8px;
+  --r-md: 14px;
+  --r-lg: 24px;
+  --r-xl: 36px;
+  --r-pill: 999px;
+
+  /* ---------- SHADOW — cool blue-tinted ---------- */
+  --shadow-1: 0 1px 2px rgba(11, 34, 55, 0.08);
+  --shadow-2: 0 10px 28px -10px rgba(11, 34, 55, 0.18);
+  --shadow-3: 0 28px 56px -20px rgba(15, 66, 105, 0.28);
+
+  /* ---------- MOTION ---------- */
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --dur-xs: 120ms;
+  --dur-sm: 180ms;
+  --dur-md: 320ms;
+  --dur-lg: 600ms;
+}
+
+/* ---------- ELEMENT DEFAULTS ---------- */
+html,
+body {
+  background: var(--bg-page);
+  color: var(--fg-default);
+  font-family: var(--font-body);
+  font-size: var(--fs-body);
+  line-height: var(--lh-normal);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-display);
+  color: var(--fg-default);
+  margin: 0;
+  text-wrap: balance;
+  font-weight: 400; /* Fjalla One only ships 400 */
+  text-transform: none;
+}
+
+h1 {
+  font-size: var(--fs-h1);
+  line-height: var(--lh-tight);
+  letter-spacing: var(--tr-tight);
+}
+
+h2 {
+  font-size: var(--fs-h2);
+  line-height: var(--lh-tight);
+  letter-spacing: var(--tr-snug);
+}
+
+h3 {
+  font-size: var(--fs-h3);
+  line-height: var(--lh-snug);
+  letter-spacing: var(--tr-snug);
+}
+
+h4 {
+  font-size: var(--fs-h4);
+  line-height: var(--lh-snug);
+}
+
+p {
+  font-size: var(--fs-body);
+  line-height: var(--lh-relaxed);
+  color: var(--fg-default);
+  margin: 0 0 var(--s-4);
+  text-wrap: pretty;
+  max-width: var(--reading-max);
+}
+
+small,
+.small {
+  font-size: var(--fs-small);
+  color: var(--fg-muted);
+}
+
+.eyebrow {
+  font-family: var(--font-body);
+  font-size: var(--fs-eyebrow);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: var(--tr-eyebrow);
+  color: var(--tide-500);
+  margin: 0 0 var(--s-3);
+  display: inline-block;
+}
+
+a {
+  color: var(--fg-link);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 4px;
+  transition: text-decoration-thickness var(--dur-sm) var(--ease-out);
+}
+a:hover {
+  text-decoration-thickness: 2px;
+}
+
+/* ---------- BUTTONS ---------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--s-2);
+  font-family: var(--font-body);
+  font-size: var(--fs-body);
+  font-weight: 700;
+  line-height: 1;
+  padding: 16px 26px;
+  border-radius: var(--r-pill);
+  border: 1.5px solid transparent;
+  cursor: pointer;
+  transition:
+    background var(--dur-sm) var(--ease-out),
+    color var(--dur-sm) var(--ease-out),
+    border-color var(--dur-sm) var(--ease-out),
+    transform 80ms var(--ease-out);
+  text-decoration: none;
+  white-space: nowrap;
+}
+.btn:active {
+  transform: scale(0.98);
+}
+.btn:focus-visible {
+  outline: 2px solid var(--tide-500);
+  outline-offset: 2px;
+}
+
+.btn-primary {
+  background: var(--tide-500);
+  color: #fff;
+}
+.btn-primary:hover {
+  background: var(--tide-600);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--deep-700);
+  border-color: var(--deep-700);
+}
+.btn-secondary:hover {
+  background: var(--tide-50);
+}
+
+.btn-ghost {
+  background: transparent;
+  color: var(--ink-900);
+  padding: 12px 16px;
+}
+.btn-ghost:hover {
+  color: var(--tide-500);
+}
+
+.btn-foam {
+  background: var(--foam-500);
+  color: #fff;
+}
+.btn-foam:hover {
+  background: var(--foam-600);
+}
+
+.btn:disabled,
+.btn[aria-disabled="true"] {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+/* ---------- FORM ---------- */
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-2);
+}
+.field > label {
+  font-size: var(--fs-small);
+  font-weight: 700;
+  color: var(--ink-700);
+}
+.field > input,
+.field > textarea,
+.field > select {
+  font: inherit;
+  font-size: var(--fs-body);
+  color: var(--ink-900);
+  padding: 14px 16px;
+  background: var(--bg-raised);
+  border: 1px solid var(--border-default);
+  border-radius: var(--r-sm);
+  box-shadow: var(--shadow-1);
+  transition:
+    border-color var(--dur-sm) var(--ease-out),
+    box-shadow var(--dur-sm) var(--ease-out);
+}
+.field > input:focus,
+.field > textarea:focus,
+.field > select:focus {
+  outline: none;
+  border-color: var(--tide-500);
+  box-shadow: 0 0 0 3px var(--tide-100);
+}
+
+/* ---------- UTIL ---------- */
+.container {
+  max-width: var(--content-max);
+  margin: 0 auto;
+  padding: 0 var(--gutter-desktop);
+}
+@media (max-width: 900px) {
+  .container {
+    padding: 0 var(--gutter-tablet);
+  }
+}
+@media (max-width: 600px) {
+  .container {
+    padding: 0 var(--gutter-mobile);
+  }
+}
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--s-2);
+  padding: 6px 12px;
+  font-size: var(--fs-caption);
+  font-weight: 700;
+  border-radius: var(--r-pill);
+  background: var(--sky-100);
+  color: var(--deep-700);
+  border: 1px solid var(--border-default);
+  letter-spacing: 0.02em;
+}
+.chip-tide {
+  background: var(--tide-50);
+  color: var(--tide-700);
+  border-color: transparent;
+}
+.chip-foam {
+  background: var(--foam-50);
+  color: var(--foam-600);
+  border-color: transparent;
+}
+.chip-sand {
+  background: var(--sand-100);
+  color: var(--ink-700);
+  border-color: transparent;
+}
+
+/* Fjalla-One is all-caps-ish in feel; our display headlines don't need uppercase
+ * but the eyebrow and nav labels look great in caps. Fjalla has no weight variants. */

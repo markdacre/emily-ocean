@@ -1,0 +1,10 @@
+node_modules/
+.next/
+.env
+.env.local
+.DS_Store
+*.log
+
+# Large video files (keep small web versions only)
+*-HD.mp4
+.vercel
