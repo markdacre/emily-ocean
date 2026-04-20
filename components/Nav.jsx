@@ -3,11 +3,22 @@ const { useState: useNavState, useEffect: useNavEffect } = React;
 
 function Nav() {
   const [scrolled, setScrolled] = useNavState(false);
+  const [open, setOpen] = useNavState(false);
+
   useNavEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40);
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
+
+  useNavEffect(() => {
+    document.body.style.overflow = open ? "hidden" : "";
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [open]);
+
+  const closeDrawer = () => setOpen(false);
 
   return (
     <header
@@ -15,12 +26,13 @@ function Nav() {
         position: "sticky",
         top: 0,
         zIndex: 50,
-        background: scrolled ? "rgba(244,250,252,0.88)" : "transparent",
+        background: scrolled || open ? "rgba(244,250,252,0.96)" : "transparent",
         backdropFilter: scrolled ? "blur(12px)" : "none",
         WebkitBackdropFilter: scrolled ? "blur(12px)" : "none",
-        borderBottom: scrolled
-          ? "1px solid var(--ink-100)"
-          : "1px solid transparent",
+        borderBottom:
+          scrolled || open
+            ? "1px solid var(--ink-100)"
+            : "1px solid transparent",
         transition:
           "background .32s var(--ease-out), border-color .32s var(--ease-out)",
       }}
@@ -79,6 +91,7 @@ function Nav() {
             Emily <span style={{ color: "var(--tide-500)" }}>Thibodeau</span>
           </span>
         </a>
+
         <nav
           style={{ display: "flex", gap: 28, alignItems: "center" }}
           className="desktop-nav"
@@ -107,6 +120,67 @@ function Nav() {
               padding: "12px 22px",
               letterSpacing: "0.08em",
               textTransform: "uppercase",
+            }}
+          >
+            Book a call
+          </a>
+        </nav>
+
+        <button
+          type="button"
+          className="em-nav-toggle"
+          aria-label={open ? "Close menu" : "Open menu"}
+          aria-expanded={open}
+          aria-controls="em-mobile-drawer"
+          onClick={() => setOpen((v) => !v)}
+        >
+          {open ? (
+            <svg
+              width="22"
+              height="22"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+            >
+              <path d="M6 6l12 12M6 18L18 6" />
+            </svg>
+          ) : (
+            <svg
+              width="22"
+              height="22"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+            >
+              <path d="M4 7h16M4 12h16M4 17h16" />
+            </svg>
+          )}
+        </button>
+      </div>
+
+      <div
+        id="em-mobile-drawer"
+        className={`em-nav-drawer ${open ? "open" : ""}`}
+      >
+        <nav>
+          {window.DATA.nav.map((item) => (
+            <a key={item.href} href={item.href} onClick={closeDrawer}>
+              {item.label}
+            </a>
+          ))}
+          <a
+            className="btn btn-primary"
+            href="#contact"
+            onClick={closeDrawer}
+            style={{
+              fontSize: 14,
+              letterSpacing: "0.08em",
+              textTransform: "uppercase",
+              justifyContent: "center",
             }}
           >
             Book a call

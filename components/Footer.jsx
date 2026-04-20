@@ -31,6 +31,7 @@ function Footer() {
       </svg>
       <div className="container" style={{ position: "relative" }}>
         <div
+          className="em-footer-grid"
           style={{
             display: "grid",
             gridTemplateColumns: "1.4fr 1fr 1fr",
@@ -203,6 +204,7 @@ function Footer() {
           </div>
         </div>
         <div
+          className="em-footer-bottom"
           style={{
             borderTop: "1px solid rgba(244,250,252,0.12)",
             paddingTop: 24,

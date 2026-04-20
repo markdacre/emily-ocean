@@ -4,10 +4,12 @@ function About() {
   return (
     <section
       id="about"
+      className="em-section"
       style={{ padding: "112px 0", background: "var(--sky-50)" }}
     >
       <div className="container">
         <div
+          className="em-about-grid"
           style={{
             display: "grid",
             gridTemplateColumns: "0.9fr 1.1fr",
@@ -15,7 +17,7 @@ function About() {
             alignItems: "center",
           }}
         >
-          <div style={{ position: "relative" }}>
+          <div className="em-about-photo" style={{ position: "relative" }}>
             <div
               aria-hidden
               style={{

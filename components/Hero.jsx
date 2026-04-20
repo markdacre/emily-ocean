@@ -4,6 +4,7 @@ function Hero() {
   return (
     <section
       id="top"
+      className="em-hero"
       style={{
         position: "relative",
         paddingTop: 40,
@@ -63,6 +64,7 @@ function Hero() {
 
       <div className="container" style={{ position: "relative" }}>
         <div
+          className="em-hero-grid"
           style={{
             display: "grid",
             gridTemplateColumns: "1.05fr 1fr",
@@ -86,6 +88,7 @@ function Hero() {
               <span style={{ color: "var(--foam-500)" }}>{h.titleC}</span>
             </h1>
             <p
+              className="em-hero-sub"
               style={{
                 marginTop: 28,
                 fontSize: 19,
@@ -125,6 +128,7 @@ function Hero() {
               </a>
             </div>
             <div
+              className="em-hero-stats"
               style={{
                 display: "flex",
                 gap: 40,
@@ -155,10 +159,11 @@ function Hero() {
               ))}
             </div>
           </div>
-          <div style={{ position: "relative" }}>
+          <div className="em-hero-photo" style={{ position: "relative" }}>
             {/* tide marker ring behind photo */}
             <div
               aria-hidden
+              className="em-hero-ring"
               style={{
                 position: "absolute",
                 inset: "-18px -18px 18px -18px",
@@ -189,6 +194,7 @@ function Hero() {
             </div>
             {/* pull-quote lozenge */}
             <div
+              className="em-hero-quote"
               style={{
                 position: "absolute",
                 bottom: -22,

@@ -4,10 +4,12 @@ function Contact() {
   return (
     <section
       id="contact"
+      className="em-section"
       style={{ padding: "112px 0", background: "var(--sky-50)" }}
     >
       <div className="container">
         <div
+          className="em-contact-grid"
           style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 72 }}
         >
           <div>
@@ -107,6 +109,7 @@ function Contact() {
             </div>
           </div>
           <form
+            className="em-contact-form"
             style={{
               background: "var(--bg-raised)",
               borderRadius: "var(--r-lg)",

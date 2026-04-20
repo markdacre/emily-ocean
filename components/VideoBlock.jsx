@@ -77,6 +77,7 @@ function VideoBlock() {
                 <button
                   onClick={() => setPlaying(true)}
                   aria-label="Play video"
+                  className="em-video-btn"
                   style={{
                     width: 104,
                     height: 104,
@@ -118,6 +119,7 @@ function VideoBlock() {
                     Watch · 90 seconds
                   </div>
                   <div
+                    className="em-video-title"
                     style={{
                       fontFamily: "var(--font-display)",
                       fontSize: 36,

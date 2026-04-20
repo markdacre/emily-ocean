@@ -4,6 +4,7 @@ function ServicesGrid() {
   return (
     <section
       id="services"
+      className="em-section"
       style={{ padding: "112px 0 72px", background: "var(--sky-50)" }}
     >
       <div className="container">
@@ -22,6 +23,7 @@ function ServicesGrid() {
           </h2>
         </div>
         <div
+          className="em-svc-grid"
           style={{
             display: "grid",
             gridTemplateColumns: "repeat(3, 1fr)",
@@ -52,6 +54,7 @@ function ServicesGrid() {
               }}
             >
               <div
+                className="em-svc-photo"
                 style={{
                   height: 240,
                   overflow: "hidden",

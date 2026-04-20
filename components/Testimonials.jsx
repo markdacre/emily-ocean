@@ -8,6 +8,7 @@ function Testimonials() {
   return (
     <section
       id="testimonials"
+      className="em-section-tall"
       style={{
         padding: "120px 0",
         background: "var(--gradient-deep)",
@@ -60,6 +61,7 @@ function Testimonials() {
       />
       <div className="container" style={{ position: "relative" }}>
         <div
+          className="em-test-grid"
           style={{
             display: "grid",
             gridTemplateColumns: "0.45fr 1fr",
@@ -91,6 +93,7 @@ function Testimonials() {
             </h2>
           </div>
           <div
+            className="em-test-card"
             style={{
               background: "var(--sky-50)",
               color: "var(--deep-800)",
@@ -101,6 +104,7 @@ function Testimonials() {
             }}
           >
             <div
+              className="em-test-qmark"
               style={{
                 position: "absolute",
                 top: -12,

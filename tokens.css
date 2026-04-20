@@ -384,3 +384,298 @@ a:hover {
 
 /* Fjalla-One is all-caps-ish in feel; our display headlines don't need uppercase
  * but the eyebrow and nav labels look great in caps. Fjalla has no weight variants. */
+
+/* ================================================================
+ * RESPONSIVE OVERRIDES — mobile & tablet
+ * Uses !important to override component inline styles.
+ * ============================================================== */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+html,
+body {
+  overflow-x: hidden;
+}
+img,
+svg,
+video {
+  max-width: 100%;
+}
+
+/* ----- Tablet grid: 3-col services drop to 2-col ----- */
+@media (max-width: 1024px) {
+  .em-svc-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+  .em-footer-grid {
+    grid-template-columns: 1.4fr 1fr !important;
+  }
+  .em-footer-grid > :nth-child(3) {
+    grid-column: 1 / -1 !important;
+  }
+}
+
+/* ----- Mobile: collapse every grid to single column ----- */
+@media (max-width: 900px) {
+  .em-hero-grid,
+  .em-svc-grid,
+  .em-process-step,
+  .em-about-grid,
+  .em-test-grid,
+  .em-contact-grid,
+  .em-footer-grid {
+    grid-template-columns: 1fr !important;
+    gap: 40px !important;
+  }
+  /* Kill Process section alternating RTL direction */
+  .em-process-step {
+    direction: ltr !important;
+  }
+  .em-footer-grid > :nth-child(3) {
+    grid-column: auto !important;
+  }
+}
+
+/* ----- Section padding reductions ----- */
+@media (max-width: 900px) {
+  .em-hero {
+    padding: 24px 0 80px !important;
+  }
+  .em-section {
+    padding: 72px 0 !important;
+  }
+  .em-section-tall {
+    padding: 80px 0 !important;
+  }
+}
+@media (max-width: 600px) {
+  .em-hero {
+    padding: 16px 0 64px !important;
+  }
+  .em-section,
+  .em-section-tall {
+    padding: 56px 0 !important;
+  }
+}
+
+/* ----- Hero headline scale-down ----- */
+@media (max-width: 600px) {
+  .em-hero h1 {
+    font-size: clamp(44px, 11vw, 64px) !important;
+  }
+  .em-hero-sub {
+    font-size: 17px !important;
+    margin-top: 20px !important;
+  }
+}
+
+/* ----- Hero stats row: tighter gap, wrap freely ----- */
+@media (max-width: 900px) {
+  .em-hero-stats {
+    gap: 24px !important;
+    flex-wrap: wrap !important;
+    margin-top: 36px !important;
+  }
+}
+@media (max-width: 600px) {
+  .em-hero-stats {
+    gap: 20px 28px !important;
+  }
+}
+
+/* ----- Fixed-height images shrink at smaller viewports ----- */
+@media (max-width: 900px) {
+  .em-hero-photo img {
+    height: 420px !important;
+  }
+  .em-about-photo img {
+    height: 460px !important;
+  }
+  .em-process-photo img {
+    height: 320px !important;
+  }
+  .em-svc-photo {
+    height: 200px !important;
+  }
+}
+@media (max-width: 600px) {
+  .em-hero-photo img {
+    height: 340px !important;
+  }
+  .em-about-photo img {
+    height: 360px !important;
+  }
+  .em-process-photo img {
+    height: 240px !important;
+  }
+  .em-svc-photo {
+    height: 180px !important;
+  }
+}
+
+/* ----- Hero pull-quote: unstick from edge on mobile ----- */
+@media (max-width: 600px) {
+  .em-hero-quote {
+    position: static !important;
+    margin: 16px 0 0 !important;
+    max-width: 100% !important;
+  }
+}
+
+/* ----- Hero decorative ring (rotated behind photo) — disable rotation on mobile ----- */
+@media (max-width: 600px) {
+  .em-hero-ring {
+    display: none !important;
+  }
+  .em-hero-photo > div:first-of-type {
+    transform: none !important;
+  }
+}
+
+/* ----- Process: number + title font scale ----- */
+@media (max-width: 600px) {
+  .em-process-num {
+    font-size: 56px !important;
+  }
+  .em-process-title {
+    font-size: 30px !important;
+  }
+}
+
+/* ----- Testimonials: card padding + blockquote font ----- */
+@media (max-width: 900px) {
+  .em-test-card {
+    padding: 40px 36px !important;
+  }
+  .em-test-card blockquote {
+    font-size: 22px !important;
+  }
+}
+@media (max-width: 600px) {
+  .em-test-card {
+    padding: 28px 22px !important;
+  }
+  .em-test-card blockquote {
+    font-size: 19px !important;
+    line-height: 1.4 !important;
+  }
+  .em-test-qmark {
+    font-size: 120px !important;
+    right: 16px !important;
+    top: -8px !important;
+  }
+}
+
+/* ----- Contact form padding ----- */
+@media (max-width: 900px) {
+  .em-contact-form {
+    padding: 28px 24px !important;
+  }
+}
+
+/* ----- Video block play button + title ----- */
+@media (max-width: 600px) {
+  .em-video-btn {
+    width: 72px !important;
+    height: 72px !important;
+  }
+  .em-video-btn svg {
+    width: 26px !important;
+    height: 26px !important;
+  }
+  .em-video-title {
+    font-size: 22px !important;
+  }
+}
+
+/* ----- Footer bottom row wraps on mobile ----- */
+@media (max-width: 600px) {
+  .em-footer-bottom {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 10px !important;
+  }
+}
+
+/* ================================================================
+ * MOBILE NAV — hamburger + drawer
+ * ============================================================== */
+.em-nav-toggle {
+  display: none;
+  background: transparent;
+  border: 1px solid var(--ink-100);
+  border-radius: 999px;
+  width: 44px;
+  height: 44px;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  color: var(--deep-800);
+  padding: 0;
+}
+.em-nav-toggle:focus-visible {
+  outline: 2px solid var(--tide-500);
+  outline-offset: 2px;
+}
+.em-nav-toggle svg {
+  display: block;
+}
+
+.em-nav-drawer {
+  display: none;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 76px;
+  background: var(--bg-page);
+  border-top: 1px solid var(--ink-100);
+  border-bottom: 1px solid var(--ink-100);
+  padding: 20px var(--gutter-mobile) 28px;
+  z-index: 49;
+  box-shadow: var(--shadow-2);
+}
+.em-nav-drawer.open {
+  display: block;
+}
+.em-nav-drawer nav {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  align-items: stretch;
+}
+.em-nav-drawer nav a {
+  color: var(--ink-900);
+  font-family: var(--font-body);
+  font-size: 17px;
+  font-weight: 700;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  padding: 8px 0;
+  border-bottom: 1px solid var(--ink-100);
+}
+.em-nav-drawer nav a:last-child {
+  border-bottom: 0;
+}
+.em-nav-drawer nav a.btn {
+  border-bottom: 0;
+  text-align: center;
+  margin-top: 8px;
+}
+
+@media (max-width: 900px) {
+  .desktop-nav {
+    display: none !important;
+  }
+  .em-nav-toggle {
+    display: inline-flex;
+  }
+}
+@media (min-width: 901px) {
+  .em-nav-drawer {
+    display: none !important;
+  }
+}

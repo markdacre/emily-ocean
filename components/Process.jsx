@@ -4,6 +4,7 @@ function Process() {
   return (
     <section
       id="process"
+      className="em-section-tall"
       style={{
         padding: "112px 0",
         background: "var(--sky-100)",
@@ -51,6 +52,7 @@ function Process() {
             return (
               <div
                 key={s.n}
+                className="em-process-step"
                 style={{
                   display: "grid",
                   gridTemplateColumns: "1fr 1fr",
@@ -60,6 +62,7 @@ function Process() {
                 }}
               >
                 <div
+                  className="em-process-photo"
                   style={{
                     direction: "ltr",
                     borderRadius: "var(--r-lg)",
@@ -84,6 +87,7 @@ function Process() {
                     style={{ display: "flex", alignItems: "baseline", gap: 14 }}
                   >
                     <div
+                      className="em-process-num"
                       style={{
                         fontFamily: "var(--font-display)",
                         fontSize: 72,
@@ -108,6 +112,7 @@ function Process() {
                     </div>
                   </div>
                   <h3
+                    className="em-process-title"
                     style={{
                       fontSize: 38,
                       marginTop: 14,
