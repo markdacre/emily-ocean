@@ -405,6 +405,16 @@ video {
   max-width: 100%;
 }
 
+/* ----- Keep subjects in frame on fixed-height cover crops ----- */
+/* Photos of people: bias to top so heads stay visible when container
+ * is narrower than the photo's natural aspect ratio. */
+.em-hero-photo img,
+.em-about-photo img,
+.em-process-photo img,
+.em-svc-photo img {
+  object-position: center top !important;
+}
+
 /* ----- Tablet grid: 3-col services drop to 2-col ----- */
 @media (max-width: 1024px) {
   .em-svc-grid {
