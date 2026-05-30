@@ -18,13 +18,13 @@ const DATA = {
     primaryCta: { label: "Book a free 20-min call", href: "#contact" },
     secondaryCta: {
       label: "Message me on WhatsApp",
-      href: "https://wa.me/15551234567",
+      href: "https://wa.me/351914163402",
     },
-    photo: "assets/photos/emily-foam-roll-bench.jpg",
+    photo: "assets/photos/emily-yoga-stretch.jpeg",
     stats: [
       { value: "10+ yrs", label: "specializing in recovery" },
       { value: "200+", label: "clients coached" },
-      { value: "5 certs", label: "industry-recognized" },
+      { value: "10 certs", label: "industry-recognized" },
     ],
   },
   services: [
@@ -81,15 +81,35 @@ const DATA = {
     poster: "assets/photos/emily-massage-gun-back.jpg",
   },
   about: {
-    name: "Emily Thibodeau",
+    name: "Emily Gregg",
     title: "Certified personal trainer · Recovery specialist",
     bio: "I've spent over a decade coaching people of every age and ability — athletes, busy parents, folks rebuilding after surgery, and anyone who wants to get stronger without getting hurt. My training is precise, adaptable, and stubbornly patient. The goal is always the same: make you more capable in your own life.",
     credentials: [
-      "NASM-CPT",
-      "Corrective Exercise Specialist",
-      "Functional Aging Specialist",
-      "Senior Fitness Specialist",
-      "Pain-Free Performance Certified",
+      {
+        issuer: "National Academy of Sports Medicine (NASM)",
+        items: [
+          "Certified Personal Trainer (CPT)",
+          "Corrective Exercise Specialist (CES)",
+          "Performance Enhancement Specialist (PES)",
+        ],
+      },
+      {
+        issuer: "Paul Chek Institute",
+        items: ["Holistic Lifestyle Coach", "Scientific Core Conditioner"],
+      },
+      {
+        issuer: "First aid",
+        items: ["CPR/AED certified — current, 21 years running"],
+      },
+      {
+        issuer: "Additional training",
+        items: [
+          "TRX Suspension Trainer",
+          "TRX Ripped Trainer",
+          "Jillian Michaels' Body Shred",
+          "Schwinn Cycle Certification",
+        ],
+      },
     ],
     photo: "assets/photos/emily-box-seated.jpg",
   },
@@ -117,11 +137,11 @@ const DATA = {
     },
   ],
   contact: {
-    calendly: "https://calendly.com/emilythibodeau",
-    whatsapp: "https://wa.me/15551234567",
-    instagram: "https://instagram.com/emilythibodeaufitness",
-    email: "emily@emilythibodeaufitness.com",
-    phone: "+1 (555) 123-4567",
+    calendly: "https://calendly.com/me-emilygreggfitness",
+    whatsapp: "https://wa.me/351914163402",
+    instagram: "https://www.instagram.com/emilygreggfitness/",
+    email: "me@emilygreggfitness.com",
+    phone: "+351 914 163 402",
   },
 };
 

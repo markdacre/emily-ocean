@@ -1,6 +1,6 @@
-# Emily Thibodeau Fitness — Ocean Edition
+# Emily Gregg Fitness — Ocean Edition
 
-A static-HTML prototype for Emily Thibodeau's personal training site. Blue/teal ocean palette with movement metaphors ("find your current", "wade in", "set the course").
+A static-HTML prototype for Emily Gregg's personal training site. Blue/teal ocean palette with movement metaphors ("find your current", "wade in", "set the course").
 
 ## Stack
 

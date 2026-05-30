@@ -88,7 +88,7 @@ function Nav() {
               textTransform: "uppercase",
             }}
           >
-            Emily <span style={{ color: "var(--tide-500)" }}>Thibodeau</span>
+            Emily <span style={{ color: "var(--tide-500)" }}>Gregg</span>
           </span>
         </a>
 
@@ -100,6 +100,7 @@ function Nav() {
             <a
               key={item.href}
               href={item.href}
+              className="em-nav-link"
               style={{
                 color: "var(--ink-700)",
                 fontSize: 14,

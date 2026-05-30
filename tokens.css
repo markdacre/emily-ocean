@@ -1,4 +1,4 @@
-/* Emily Thibodeau Fitness — Ocean Edition design tokens
+/* Emily Gregg Fitness — Ocean Edition design tokens
  * Fjalla One (display) + Cantarell (body). Google Fonts.
  */
 
@@ -384,6 +384,47 @@ a:hover {
 
 /* Fjalla-One is all-caps-ish in feel; our display headlines don't need uppercase
  * but the eyebrow and nav labels look great in caps. Fjalla has no weight variants. */
+
+/* ---------- NAV LINK HOVER (top nav) ---------- */
+/* Inline styles set the resting color, so :hover needs !important to win. */
+.em-nav-link {
+  position: relative;
+  transition: color var(--dur-sm) var(--ease-out);
+}
+.em-nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -7px;
+  height: 2.5px;
+  border-radius: 2px;
+  background: var(--tide-500);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform var(--dur-md) var(--ease-out);
+}
+.em-nav-link:hover,
+.em-nav-link:focus-visible {
+  color: var(--tide-500) !important;
+}
+.em-nav-link:hover::after,
+.em-nav-link:focus-visible::after {
+  transform: scaleX(1);
+}
+
+/* ---------- FOOTER LINK HOVER — slide right, ease back on blur ---------- */
+.em-footer-link {
+  display: inline-block;
+  transition:
+    transform var(--dur-md) var(--ease-out),
+    color var(--dur-sm) var(--ease-out);
+}
+.em-footer-link:hover,
+.em-footer-link:focus-visible {
+  transform: translateX(14px);
+  color: #fff !important;
+}
 
 /* ================================================================
  * RESPONSIVE OVERRIDES — mobile & tablet

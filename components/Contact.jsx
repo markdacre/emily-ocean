@@ -47,6 +47,8 @@ function Contact() {
             >
               <a
                 href={c.calendly}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="btn btn-primary"
                 style={{ justifyContent: "flex-start" }}
               >
@@ -67,6 +69,8 @@ function Contact() {
               </a>
               <a
                 href={c.whatsapp}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="btn btn-foam"
                 style={{ justifyContent: "flex-start" }}
               >
@@ -87,6 +91,8 @@ function Contact() {
               </a>
               <a
                 href={c.instagram}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="btn btn-secondary"
                 style={{ justifyContent: "flex-start" }}
               >

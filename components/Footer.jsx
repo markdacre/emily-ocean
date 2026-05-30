@@ -76,8 +76,7 @@ function Footer() {
                   whiteSpace: "nowrap",
                 }}
               >
-                Emily{" "}
-                <span style={{ color: "var(--foam-300)" }}>Thibodeau</span>
+                Emily <span style={{ color: "var(--foam-300)" }}>Gregg</span>
               </div>
             </div>
             <div
@@ -132,6 +131,7 @@ function Footer() {
                 <li key={n.href}>
                   <a
                     href={n.href}
+                    className="em-footer-link"
                     style={{
                       color: "var(--sky-100)",
                       textDecoration: "none",
@@ -171,6 +171,9 @@ function Footer() {
               <li>
                 <a
                   href={c.whatsapp}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="em-footer-link"
                   style={{ color: "var(--sky-100)", textDecoration: "none" }}
                 >
                   WhatsApp · {c.phone}
@@ -179,6 +182,7 @@ function Footer() {
               <li>
                 <a
                   href={`mailto:${c.email}`}
+                  className="em-footer-link"
                   style={{ color: "var(--sky-100)", textDecoration: "none" }}
                 >
                   {c.email}
@@ -187,6 +191,9 @@ function Footer() {
               <li>
                 <a
                   href={c.instagram}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="em-footer-link"
                   style={{ color: "var(--sky-100)", textDecoration: "none" }}
                 >
                   Instagram
@@ -195,6 +202,9 @@ function Footer() {
               <li>
                 <a
                   href={c.calendly}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="em-footer-link"
                   style={{ color: "var(--sky-100)", textDecoration: "none" }}
                 >
                   Book via Calendly
@@ -214,7 +224,7 @@ function Footer() {
             color: "var(--sky-200)",
           }}
         >
-          <div>© {new Date().getFullYear()} Emily Thibodeau Fitness</div>
+          <div>© {new Date().getFullYear()} Emily Gregg Fitness</div>
           <div
             style={{
               letterSpacing: "0.12em",

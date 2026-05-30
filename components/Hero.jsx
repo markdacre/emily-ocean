@@ -110,7 +110,12 @@ function Hero() {
               <a className="btn btn-primary" href={h.primaryCta.href}>
                 {h.primaryCta.label}
               </a>
-              <a className="btn btn-secondary" href={h.secondaryCta.href}>
+              <a
+                className="btn btn-secondary"
+                href={h.secondaryCta.href}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <svg
                   width="18"
                   height="18"

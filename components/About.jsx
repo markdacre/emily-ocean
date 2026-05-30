@@ -37,7 +37,7 @@ function About() {
             >
               <img
                 src={a.photo}
-                alt="Emily Thibodeau"
+                alt="Emily Gregg"
                 style={{
                   display: "block",
                   width: "100%",
@@ -77,16 +77,41 @@ function About() {
                   textTransform: "uppercase",
                   color: "var(--tide-500)",
                   fontWeight: 700,
-                  marginBottom: 14,
+                  marginBottom: 18,
                 }}
               >
                 Certifications
               </div>
-              <div style={{ display: "flex", flexWrap: "wrap", gap: 10 }}>
-                {a.credentials.map((c) => (
-                  <span key={c} className="chip chip-tide">
-                    {c}
-                  </span>
+              <div
+                style={{
+                  display: "flex",
+                  flexDirection: "column",
+                  gap: 20,
+                }}
+              >
+                {a.credentials.map((group) => (
+                  <div key={group.issuer}>
+                    <div
+                      style={{
+                        fontFamily: "var(--font-body)",
+                        fontSize: 12,
+                        fontWeight: 700,
+                        letterSpacing: "0.14em",
+                        textTransform: "uppercase",
+                        color: "var(--ink-400)",
+                        marginBottom: 8,
+                      }}
+                    >
+                      {group.issuer}
+                    </div>
+                    <div style={{ display: "flex", flexWrap: "wrap", gap: 10 }}>
+                      {group.items.map((c) => (
+                        <span key={c} className="chip chip-tide">
+                          {c}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
                 ))}
               </div>
             </div>
